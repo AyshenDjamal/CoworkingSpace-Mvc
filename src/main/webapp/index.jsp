@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Coworking Space</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<h2>Select Panel:</h2>
+<ul>
+    <li><a href="/admin/dashboard">Admin Panel</a></li>
+    <li><a href="/customer/dashboard">Customer Panel</a></li>
+</ul>
+</body>
+</html>
+

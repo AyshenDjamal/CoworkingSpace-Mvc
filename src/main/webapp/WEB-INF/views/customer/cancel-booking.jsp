@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cancel Booking</title>
+</head>
+<body>
+<h1>Cancel Reservation</h1>
+<form th:action="@{/customer/cancel}" method="post">
+    Booking ID: <input type="number" name="bookingId" required><br>
+    <button type="submit">Cancel Booking</button>
+</form>
+<a href="/customer/panel">Back to Customer Panel</a>
+</body>
+</html>

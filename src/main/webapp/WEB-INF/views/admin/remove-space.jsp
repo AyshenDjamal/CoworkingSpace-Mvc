@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Remove Space by ID</title>
+</head>
+<body>
+<h1>Remove Space</h1>
+
+<!-- Simple ID input form -->
+<form th:action="@{/admin/spaces/remove}" method="post">
+  <label>
+    Enter Space ID to Remove:
+    <input type="number" name="spaceID" required>
+  </label>
+  <button type="submit">Delete</button>
+</form>
+
+<!-- Minimal status message -->
+<div th:if="${message}" th:text="${message}"></div>
+
+<a href="/admin/panel">Back to Admin Panel</a>
+</body>
+</html>
