@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Panel</title>
+</head>
+<body>
+<h1>Admin Actions</h1>
+
+<!-- Added message display for flash attributes -->
+<div th:if="${message}" th:text="${message}" style="color:green;"></div>
+
+<ul>
+  <!-- Changed to Thymeleaf URL syntax -->
+  <li><a th:href="@{/admin/spaces/add}">Add New Space</a></li>
+  <li><a th:href="@{/admin/spaces/remove}">Remove Space</a></li>
+  <li><a th:href="@{/admin/bookings}">View All Reservations</a></li>
+</ul>
+
+<!-- Changed to Thymeleaf URL syntax -->
+<a th:href="@{/}">Back</a>
+
+</body>
+</html>
+</html>

@@ -8,6 +8,16 @@ public class MainController {
 
     @GetMapping("/")
     public String home() {
-        return "main"; // shows the main.html with admin/customer options
+        return "main";
+    }
+
+        @GetMapping("/admin/dashboard")
+        public String adminDashboard () {
+            return "redirect:/admin/panel";
+        }
+
+        @GetMapping("/customer/dashboard")
+        public String customerDashboard () {
+            return "redirect:/customer/panel";
     }
 }
