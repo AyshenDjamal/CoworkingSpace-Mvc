@@ -11,7 +11,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "identifier")
+@ComponentScan(basePackages = "org.example")
 public class MvcConfig implements WebMvcConfigurer {
 
     @Bean
