@@ -5,14 +5,25 @@
 </head>
 <body>
 <h1>Book a Space</h1>
+
+<!-- Error message display -->
+<div th:if="${error}" th:text="${error}" style="color: red;"></div>
+
 <form th:action="@{/customer/book}" th:object="${reservation}" method="post">
+  <!-- Added Reservation ID field -->
+  Reservation ID: <input type="number" th:field="*{bookingID}" required><br>
+
   <input type="hidden" th:field="*{space.spaceID}">
+
   Your Name: <input type="text" th:field="*{customerName}" required><br>
   Date: <input type="date" th:field="*{date}" required><br>
   Start Time: <input type="time" th:field="*{startTime}" required><br>
   End Time: <input type="time" th:field="*{endTime}" required><br>
+
   <button type="submit">Confirm Booking</button>
 </form>
-<a href="/customer/panel">Back to Customer Panel</a>
+
+<a th:href="@{/customer/panel}">Back to Customer Panel</a>
+
 </body>
 </html>

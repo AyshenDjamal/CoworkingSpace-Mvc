@@ -32,7 +32,7 @@ public class CustomerController {
     }
 
     @GetMapping("/book-space")
-    public String bookSpaceForm(@RequestParam(required = false)Integer id, Model model){
+    public String bookSpaceForm(@RequestParam(name = "id", required = false)Integer id, Model model){
         if(id!= null){
             CoworkingSpace space = reservationService.findSpaceID(id);
             Reservation reservation = new Reservation();
@@ -47,7 +47,7 @@ public class CustomerController {
     @PostMapping("/book")
     public String bookSpace(@ModelAttribute Reservation reservation) {
         reservationService.bookSpace(reservation);
-        return "redirect:/customer/my-bookings";
+        return "redirect:/customer/book-space";
     }
 
     @GetMapping("/my-bookings")
@@ -62,7 +62,7 @@ public class CustomerController {
     }
 
     @PostMapping("/cancel")
-    public String cancelBooking(@RequestParam int bookingId, Model model) {
+    public String cancelBooking(@RequestParam ("bookingID")int bookingId, Model model) {
         boolean canceled = reservationService.cancelBooking(bookingId);
         model.addAttribute("message", canceled ? "Booking canceled" : "Failed to cancel booking");
         return "redirect:/customer/my-bookings";

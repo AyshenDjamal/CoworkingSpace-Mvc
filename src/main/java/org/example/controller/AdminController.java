@@ -23,11 +23,6 @@ public class AdminController {
         return "admin/panel";
     }
 
-    @GetMapping("/spaces")
-    public String listSpaces(Model model){
-        model.addAttribute("spaces", spaceService.viewAllBookings());
-        return "admin/spaces";
-    }
 
     @GetMapping("/spaces/add")
     public String addSpaceForm(Model model){
@@ -38,7 +33,7 @@ public class AdminController {
     @PostMapping("/spaces/add")
     public String addSpace(@ModelAttribute CoworkingSpace space){
         spaceService.addSpace(space);
-        return "redirect:/admin/spaces";
+        return "redirect:/admin/add-space";
     }
 
      @GetMapping("/spaces/remove")
@@ -47,10 +42,10 @@ public class AdminController {
      }
 
      @PostMapping("/spaces/remove")
-         public String removeSpace ( @RequestParam int spaceID, Model model){
+         public String removeSpace ( @RequestParam ("spaceID")int spaceID, Model model){
              boolean removed = spaceService.removeSpace(spaceID);
              model.addAttribute("message", removed ? "Space removed successfully" : "Failed to remove space");
-             return "redirect:/admin/spaces";
+             return "redirect:/admin/remove-space";
          }
 
          @GetMapping("/bookings")

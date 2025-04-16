@@ -18,6 +18,6 @@
 <!-- Minimal status message -->
 <div th:if="${message}" th:text="${message}"></div>
 
-<a href="/admin/panel">Back to Admin Panel</a>
+<a th:href="@{/admin/panel}">Back to Admin Panel</a>
 </body>
 </html>
